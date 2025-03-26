@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import os
+import secrets
+
+def generate_insult():
+    insults_arr = ["you suck", "my grandma is more productive than you and she is dead", "stop yapping and start building", "you are retarded", "just sell your computer at this point", "yo mom a hoe", "idk what to call you anymore", "I ran out of jokes but thankfully you are one yourself"]
+    insult = secrets.choice(insults_arr)
+    return insult
+
+
+if os.path.exists("/usr/share/cowsay"):
+    os.system("cowsay -r " + str(generate_insult()))
+else:
+    print("cowsay isn't installed.")
